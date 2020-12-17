@@ -1,0 +1,103 @@
+# Project information
+site_name: Searchperience Documentation
+site_description: Searchperience Manual
+site_author: Searchperience Team
+
+# Copyright
+copyright: Copyright &copy; Searchperience - AOE GmbH
+
+# Configuration
+theme:
+  name: material
+  language: en
+  features:
+    - tabs
+    - instant
+  palette:
+    primary: deep orange
+    accent: deep orange
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/images/searchperience-logo-grey.png
+  logo: assets/images/searchperience-logo-white.png
+  custom_dir: template
+
+  # Static pages to build
+  static_templates:
+    - health.json
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+# Extensions
+markdown_extensions:
+  - markdown.extensions.admonition
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
+      toc_depth: 5
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.tilde
+
+# Extra
+extra_css:
+  - assets/stylesheets/extras.css
+extra_javascript:
+  - https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js
+
+# Page tree
+nav:
+  - Start: index.md
+  - Cockpit Manual:
+      - API: cockpit/api.md
+      - Dashboard: cockpit/dashboard.md
+      - Indexing:
+          - All Documents: cockpit/documents.md
+          - Crawler: cockpit/crawler.md
+      - Marketing:
+          - Business Enrichments: cockpit/enrichments.md
+          - Promotions: cockpit/promotions.md
+          - Widgets: cockpit/widgets.md
+      - Search Intelligence:
+          - Stopwords: cockpit/stopwords.md
+          - Synonyms: cockpit/synonyms.md
+      - Admin Tools:
+          - User Administration: cockpit/user-administration.md
+  - Concepts:
+      - Suggestions: concept/suggestions.md
+      - Product Relevance: concept/document-relevance.md
+  - FAQ: faq.md
+  - Features: features.md
+  - Glossary: glossary.md
+  - Integrations:
+      - Flights: integration/flights.md
+      - Indexing:
+          - SQS: integration/indexing/sqs.md
+          - Crawling: integration/indexing/crawling.md
+      - Tracking:
+          - Google Tag Integration: integration/tracking/google-tag-integration.md
+          - Javascript Tracking: integration/tracking/javascript-tracking.md
+      - OM3:
+          - Akeneo: integration/om3/akeneo.md
+          - Image Service: integration/om3/imageservice.md
+          - Master Data Portal: integration/om3/masterdataportal.md
+          - Marketplace Frontend: integration/om3/marketplace-frontend.md
+          - Ecommerce API: integration/om3/ecommerce-api.md
+          - Price Engine: integration/om3/priceengine.md
+
+# Plugins
+plugins:
+  - search
+  - mermaid2
+  - minify:
+      minify_html: true
